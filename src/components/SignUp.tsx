@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Icons } from "./Icons";
 import UserAuthForm from "./UserAuthForm";
 
-const SignIn = ({}) => {
+const SignUp = ({}) => {
   return (
     <div
       className="
@@ -38,7 +38,7 @@ const SignIn = ({}) => {
             tracking-tight
           "
         >
-          Welcome back
+          Sign Up
         </h1>
         <p
           className="
@@ -62,9 +62,9 @@ const SignIn = ({}) => {
             text-zinc-700
           "
         >
-          New to Reddit Clone?{" "}
+          Alreay a Reddit Clone user?{" "}
           <Link
-            href="/sign-up"
+            href="/sign-in"
             className="
                 hover:text-zinc-800
                 text-sm
@@ -72,7 +72,7 @@ const SignIn = ({}) => {
                 underline-offset-4
               "
           >
-            Sign Up
+            Sign In
           </Link>
         </p>
       </div>
@@ -80,4 +80,4 @@ const SignIn = ({}) => {
   );
 };
 
-export default SignIn;
+export default SignUp;
