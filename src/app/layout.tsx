@@ -3,9 +3,10 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
+import { Toaster } from "@/components/ui/Toaster";
 
 export const metadata = {
-  title: "Breadit",
+  title: "Reddit Clone",
   description: "A Reddit clone built with Next.js and TypeScript.",
 };
 
@@ -41,6 +42,7 @@ export default function RootLayout({
         >
           {children}
         </div>
+        <Toaster />
       </body>
     </html>
   );
