@@ -59,7 +59,7 @@ const Navbar = async () => {
               md:block
             "
           >
-            Breadit
+            Reddit Clone
           </p>
         </Link>
 
