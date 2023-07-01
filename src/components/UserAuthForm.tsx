@@ -14,15 +14,15 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
-  const loginWithGoogle = async () => {
+  const loginWithGitHub = async () => {
     setIsLoading(true);
 
     try {
-      await signIn("google");
+      await signIn("github");
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was an error logging in with Google",
+        description: "There was an error logging in with GitHub",
         variant: "destructive",
       });
     } finally {
@@ -37,11 +37,11 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
         type="button"
         size="sm"
         className="w-full"
-        onClick={loginWithGoogle}
+        onClick={loginWithGitHub}
         disabled={isLoading}
       >
-        {isLoading ? null : <Icons.google className="h-4 w-4 mr-2" />}
-        Google
+        {isLoading ? null : <Icons.github className="h-4 w-4 mr-2" />}
+        GitHub
       </Button>
     </div>
   );
