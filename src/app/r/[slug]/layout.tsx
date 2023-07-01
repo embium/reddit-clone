@@ -4,6 +4,8 @@ import { format } from "date-fns";
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/Button";
 
 const Layout = async ({
   children,
@@ -171,6 +173,16 @@ const Layout = async ({
                   isSubscribed={isSubscribed}
                 />
               ) : null}
+
+              <Link
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "w-full mb-6",
+                })}
+                href={`/r/${slug}/submit`}
+              >
+                Create Post
+              </Link>
             </dl>
           </div>
         </div>
