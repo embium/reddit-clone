@@ -18,7 +18,7 @@ export default async function Home() {
           md:text-4xl
         "
       >
-        Your feed
+        {session ? <>Your feed</> : <>Home feed</>}
       </h1>
       <div
         className="
