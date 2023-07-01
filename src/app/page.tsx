@@ -2,8 +2,13 @@ import { HomeIcon } from "lucide-react";
 import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/Button";
+import GeneralFeed from "@/components/GeneralFeed";
+import CustomFeed from "@/components/CustomFeed";
+import { getAuthSession } from "@/lib/auth";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getAuthSession();
+
   return (
     <>
       <h1
@@ -25,8 +30,8 @@ export default function Home() {
           py-6
         "
       >
-        {/* feed */}
-
+        {/* @ts-expect-error server component */}
+        {session ? <CustomFeed /> : <GeneralFeed />}
         {/* subreddit info */}
         <div
           className="
