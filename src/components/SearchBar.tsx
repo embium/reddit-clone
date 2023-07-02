@@ -74,6 +74,8 @@ const SearchBar: FC<SearchBarProps> = ({}) => {
       "
     >
       <CommandInput
+        /*
+        // @ts-ignore */
         isLoading={isFetching}
         onValueChange={(text) => {
           setInput(text);
