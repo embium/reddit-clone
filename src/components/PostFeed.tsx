@@ -9,6 +9,7 @@ import { useSession } from "next-auth/react";
 import { ExtendedPost } from "@/types/db";
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from "@/config";
 import Post from "./Post";
+import { Loader2 } from "lucide-react";
 
 interface PostFeedProps {
   initialPosts: ExtendedPost[];
@@ -94,6 +95,17 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, subredditName }) => {
           );
         }
       })}
+
+      {isFetchingNextPage && (
+        <li
+          className="
+            flex
+            justify-center
+          "
+        >
+          <Loader2 className="w-6 h-6 text-zinc-500 animate-spin" />
+        </li>
+      )}
     </ul>
   );
 };
